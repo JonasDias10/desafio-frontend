@@ -26,7 +26,29 @@ export function WinnerModal({ isOpen, onClose, onOpenChange, winner }: Props) {
         <ModalBody>
           <div className="flex w-full justify-center">
             {winner ? (
-              <HeroCard key={winner.id} superhero={winner} />
+              <>
+                <HeroCard key={winner.id} superhero={winner} />
+                <div className="ml-4">
+                  <p className="text-xl font-semibold">
+                    Combate: {winner.powerstats.combat}
+                  </p>
+                  <p className="text-xl font-semibold">
+                    Durabilidade: {winner.powerstats.durability}
+                  </p>
+                  <p className="text-xl font-semibold">
+                    Inteligência: {winner.powerstats.intelligence}
+                  </p>
+                  <p className="text-xl font-semibold">
+                    Poder: {winner.powerstats.power}
+                  </p>
+                  <p className="text-xl font-semibold">
+                    Velocidade: {winner.powerstats.speed}
+                  </p>
+                  <p className="text-xl font-semibold">
+                    Força: {winner.powerstats.strength}
+                  </p>
+                </div>
+              </>
             ) : (
               <h1>Não houve nenhum vencedor, tente novamente.</h1>
             )}
